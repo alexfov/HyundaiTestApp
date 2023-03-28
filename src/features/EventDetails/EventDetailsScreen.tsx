@@ -29,10 +29,10 @@ export const EventDetailsScreen = ({}: Props) => {
   return (
     <ScrollView style={st.container} contentContainerStyle={st.contentContainerStyle}>
       <Avatar uri={actor?.avatar_url} />
-      <Text>{actor.login}</Text>
-      <Text>{type}</Text>
-      <Text>repo name: {repo.name}</Text>
-      <Text>{date}</Text>
+      <Text style={st.text}>{actor.login}</Text>
+      <Text style={st.text}>{type}</Text>
+      <Text style={st.text}>repo name: {repo.name}</Text>
+      <Text style={st.text}>{date}</Text>
     </ScrollView>
   );
 };
@@ -40,4 +40,7 @@ export const EventDetailsScreen = ({}: Props) => {
 const st = StyleSheet.create({
   container: { flex: 1 },
   contentContainerStyle: { padding: 16 },
+  text: {
+    color: 'black',
+  },
 });

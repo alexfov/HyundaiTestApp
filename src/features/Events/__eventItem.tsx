@@ -21,8 +21,8 @@ export const EventItem = memo(
       <View style={st.container}>
         <Avatar uri={item.actor?.avatar_url} />
         <View style={st.textCont}>
-          <Text>{item.actor?.display_login}</Text>
-          <Text>{item.type}</Text>
+          <Text style={st.text}>{item.actor?.display_login}</Text>
+          <Text style={st.text}>{item.type}</Text>
         </View>
         <RectButton style={StyleSheet.absoluteFillObject} onPress={onPress} />
       </View>
@@ -39,5 +39,8 @@ const st = StyleSheet.create({
     marginLeft: 16,
     justifyContent: 'center',
     flexShrink: 1,
+  },
+  text: {
+    color: 'black',
   },
 });
