@@ -1,3 +1,5 @@
+//this file used to store global types
+
 export interface GithubEvent {
   id: string;
   type: string;

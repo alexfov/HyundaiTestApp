@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GithubEvent } from '_app/core/types/types';
+import { GithubEvent } from '_app/types/types';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({

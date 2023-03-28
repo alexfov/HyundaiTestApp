@@ -2,11 +2,10 @@ import { RouteProp, useRoute } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { RootStackParamList, RootStackScreens } from '_app/core/navigation/types';
-import { useGetPublicEventsQuery } from '_app/core/redux/api';
-import { find } from 'lodash';
 import { Avatar } from '_app/components/Avatar/Avatar';
 import { ScrollView } from 'react-native-gesture-handler';
 import dayjs from 'dayjs';
+import { useEvent } from '_app/features/Events/__useEvent';
 
 interface Props {}
 
@@ -15,15 +14,12 @@ type RouteType = RouteProp<RootStackParamList, typeof RootStackScreens.EventDeta
 export const EventDetailsScreen = ({}: Props) => {
   const route = useRoute<RouteType>();
   const id = route.params.id;
-  const { event } = useGetPublicEventsQuery(25, {
-    selectFromResult: ({ data }) => ({
-      event: find(data, { id }),
-    }),
-  });
+  const event = useEvent({ id });
 
   if (!event) {
-    return null;
+    return <Text>event not found</Text>;
   }
+
   const { type, actor, created_at, repo } = event;
   const date = dayjs(created_at).format('DD MMM YYYY HH:mm:ss');
   return (

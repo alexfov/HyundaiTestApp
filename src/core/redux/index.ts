@@ -4,6 +4,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import { api } from './api';
 import { reduxStorage } from '_app/core/mmkv';
+import eventsSlice from '_app/features/Events/eventsSlice';
 
 const persistConfig = {
   version: 1,
@@ -19,6 +20,7 @@ export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const RootReducer = combineReducers({
+  events: eventsSlice,
   [api.reducerPath]: api.reducer,
 });
 

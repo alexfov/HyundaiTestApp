@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import { GithubEvent } from '_app/core/types/types';
+import { GithubEvent } from '_app/types/types';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackNavigationProp, RootStackScreens } from '_app/core/navigation/types';
 import { Avatar } from '_app/components/Avatar/Avatar';

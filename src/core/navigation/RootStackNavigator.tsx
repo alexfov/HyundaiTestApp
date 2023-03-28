@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList, RootStackScreens } from './types';
 import { NavigationContainer } from '@react-navigation/native';
 import { EventsScreen } from '_app/features/Events/EventsScreen';
-import { EventDetailsScreen } from '_app/features/EventDetails/EventDetailsScreen';
+import { EventDetailsScreen } from '_app/features/Events/EventDetailsScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
